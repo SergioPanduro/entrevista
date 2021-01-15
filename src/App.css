@@ -36,3 +36,41 @@
     transform: rotate(360deg);
   }
 }
+
+.titulo{
+  color:black;
+
+}
+
+.casilla-izquierda{
+  width: 100px;
+  height: 200px;
+  background-color: white;
+  text-align: center;
+  border-style: solid;
+  border-top: white;
+  border-left: white;
+
+}
+
+.casilla-central{
+  width: 100px;
+  height: 200px;
+  background-color: white;
+  text-align: center;
+  border-style: solid;
+  border-top: white;
+  border-left: white;
+  border-right: white;
+
+}
+
+.casilla-derecha{
+  width: 100px;
+  height: 200px;
+  background-color: white;
+  text-align: center;
+  border-style: solid;
+  border-top: white;
+  border-right: white;
+}
