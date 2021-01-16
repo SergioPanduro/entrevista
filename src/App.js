@@ -152,7 +152,7 @@ function App() {
                 })
                 setPlayer(0)
               }else{
-                alert("Square occupied")
+                alert("Square occupied.")
               }
             }else{
               alert("Square occupied.")
