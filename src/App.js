@@ -1,260 +1,193 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import './App.css';
 import { Row, Col } from 'antd';
-
+import window from 'global'
 
 function App() {
 
   const [player,setPlayer] = useState(0)
   const [marca,setMarca] = useState({
-    casilla_1:"",
-    casilla_2:"",
-    casilla_3:"",
-    casilla_4:"",
-    casilla_5:"",
-    casilla_6:"",
-    casilla_7:"",
-    casilla_8:"",
-    casilla_9:"",
+      "value_1":{
+        marcas:"",
+        validator:"casilla_1"
+      },
+      "value_2":{
+        marcas:"",
+        validator:"casilla_2"
+      },
+      "value_3":{
+        marcas:"",
+        validator:"casilla_3"
+      },
+      "value_4":{
+        marcas:"",
+        validator:"casilla_4"
+      },
+      "value_5":{
+        marcas:"",
+        validator:"casilla_5"
+      },
+      "value_6":{
+        marcas:"",
+        validator:"casilla_6"
+      },
+      "value_7":{
+        marcas:"",
+        validator:"casilla_7"
+      },
+      "value_8":{
+        marcas:"",
+        validator:"casilla_8"
+      },
+      "value_9":{
+        marcas:"",
+        validator:"casilla_9"
+      },
   })
 
-
-
-
-  var turno = (pos) =>{
+  useEffect(() => {
     
+    ganador()
 
-    if(player == 0){
-      switch (pos) {
-        case 1:
-          if(marca.casilla1 == ""){
-            setMarca({
-              ...marca,
-              casilla1:"x"
-            })
-            setPlayer(1)
-          }else{
-            alert("casilla ocupada")
-          }
-          break;
-        case 2:
-          if(marca.casilla2 == ""){
-            setMarca({
-              ...marca,
-              casilla2:"x"
-            })
-            setPlayer(1)
-          }else{
-            alert("casilla ocupada")
-          }
-          break;
-        case 3:
-          if(marca.casilla3 == ""){
-            setMarca({
-              ...marca,
-              casilla3:"x"
-            })
-            setPlayer(1)
-          }else{
-            alert("casilla ocupada")
-          }
-          break;
-        case 4:
-            if(marca.casilla4 == ""){
-              setMarca({
-                ...marca,
-                casilla4:"x"
-              })
-              setPlayer(1)
-            }else{
-              alert("casilla ocupada")
-            }
-            break;
-          case 5:
-            if(marca.casilla5 == ""){
-              setMarca({
-                ...marca,
-                casilla5:"x"
-              })
-              setPlayer(1)
-            }else{
-              alert("casilla ocupada")
-            }
-            break;
-          case 6:
-            if(marca.casilla6 == ""){
-              setMarca({
-                ...marca,
-                casilla6:"x"
-              })
-              setPlayer(1)
-            }else{
-              alert("casilla ocupada")
-            }
-            break;
-          case 7:
-              if(marca.casilla7 == ""){
-                setMarca({
-                  ...marca,
-                  casilla7:"x"
-                })
-                setPlayer(1)
-              }else{
-                alert("casilla ocupada")
-              }
-              break;
-            case 8:
-              if(marca.casilla8 == ""){
-                setMarca({
-                  ...marca,
-                  casilla8:"x"
-                })
-                setPlayer(1)
-              }else{
-                alert("casilla ocupada")
-              }
-              break;
-            case 9:
-              if(marca.casilla9 == ""){
-                setMarca({
-                  ...marca,
-                  casilla9:"x"
-                })
-                setPlayer(1)
-              }else{
-                alert("casilla ocupada")
-              }
-              break;
-          default:
-          break;
-      }
+  });
 
-    }else{
-      switch (pos) {
-        case 1:
-          if(marca.casilla1 == ""){
-            setMarca({
-              ...marca,
-              casilla1:"y"
-            })
-            setPlayer(0)
-          }else{
-            alert("casilla ocupada")
-          }
-          break;
-        case 2:
-          if(marca.casilla2 == ""){
-            setMarca({
-              ...marca,
-              casilla2:"y"
-            })
-            setPlayer(0)
-          }else{
-            alert("casilla ocupada")
-          }
-          break;
-        case 3:
-          if(marca.casilla3 == ""){
-            setMarca({
-              ...marca,
-              casilla3:"y"
-            })
-            setPlayer(0)
-          }else{
-            alert("casilla ocupada")
-          }
-          break;
-        case 4:
-            if(marca.casilla4 == ""){
-              setMarca({
-                ...marca,
-                casilla4:"y"
-              })
-              setPlayer(0)
-            }else{
-              alert("casilla ocupada")
-            }
-            break;
-          case 5:
-            if(marca.casilla5 == ""){
-              setMarca({
-                ...marca,
-                casilla5:"y"
-              })
-              setPlayer(0)
-            }else{
-              alert("casilla ocupada")
-            }
-            break;
-          case 6:
-            if(marca.casilla6 == ""){
-              setMarca({
-                ...marca,
-                casilla6:"y"
-              })
-              setPlayer(0)
-            }else{
-              alert("casilla ocupada")
-            }
-            break;
-          case 7:
-              if(marca.casilla7 == ""){
-                setMarca({
-                  ...marca,
-                  casilla7:"y"
-                })
-                setPlayer(0)
-              }else{
-                alert("casilla ocupada")
-              }
-              break;
-            case 8:
-              if(marca.casilla8 == ""){
-                setMarca({
-                  ...marca,
-                  casilla8:"y"
-                })
-                setPlayer(0)
-              }else{
-                alert("casilla ocupada")
-              }
-              break;
-            case 9:
-              if(marca.casilla9 == ""){
-                setMarca({
-                  ...marca,
-                  casilla9:"y"
-                })
-                setPlayer(0)
-              }else{
-                alert("casilla ocupada")
-              }
-              break;
-          default:
-          break;
-      }
+
+  var ganador = () =>{
+    if(marca.value_1.marcas == "x" && marca.value_2.marcas == "x" && marca.value_3.marcas == "x"){
+      alert("player 1 wins")
+      window.location.reload()
+    }else if(marca.value_4.marcas == "x" && marca.value_5.marcas == "x" && marca.value_6.marcas == "x"){
+      alert("player 1 wins")
+      window.location.reload()
+    }else if(marca.value_7.marcas == "x" && marca.value_8.marcas == "x" && marca.value_9.marcas == "x"){
+      alert("player 1 wins")
+      window.location.reload()
+    }else if(marca.value_1.marcas == "x" && marca.value_4.marcas == "x" && marca.value_7.marcas == "x"){
+      alert("player 1 wins")
+      window.location.reload()
+    }else if(marca.value_2.marcas == "x" && marca.value_5.marcas == "x" && marca.value_8.marcas == "x"){
+      alert("player 1 wins")
+      window.location.reload()
+    }else if(marca.value_3.marcas == "x" && marca.value_6.marcas == "x" && marca.value_9.marcas == "x"){
+      alert("player 1 wins")
+      window.location.reload()
+    }else if(marca.value_3.marcas == "x" && marca.value_5.marcas == "x" && marca.value_7.marcas == "x"){
+      alert("player 1 wins")
+      window.location.reload()
+    }else if(marca.value_1.marcas == "x" && marca.value_5.marcas == "x" && marca.value_9.marcas == "x"){
+      alert("player 1 wins")
+      window.location.reload()
     }
+
+    if(marca.value_1.marcas == "y" && marca.value_2.marcas == "y" && marca.value_3.marcas == "y"){
+      alert("player 2 wins")
+      window.location.reload()
+    }else if(marca.value_4.marcas == "y" && marca.value_5.marcas == "y" && marca.value_6.marcas == "y"){
+      alert("player 2 wins")
+      window.location.reload()
+    }else if(marca.value_7.marcas == "y" && marca.value_8.marcas == "y" && marca.value_9.marcas == "y"){
+      alert("player 2 wins")
+      window.location.reload()
+    }else if(marca.value_1.marcas == "y" && marca.value_4.marcas == "y" && marca.value_7.marcas == "y"){
+      alert("player 2 wins")
+      window.location.reload()
+    }else if(marca.value_2.marcas == "y" && marca.value_5.marcas == "y" && marca.value_8.marcas == "y"){
+      alert("player 2 wins")
+      window.location.reload()
+    }else if(marca.value_3.marcas == "y" && marca.value_6.marcas == "y" && marca.value_9.marcas == "xy"){
+      alert("player 2 wins")
+      window.location.reload()
+    }else if(marca.value_3.marcas == "y" && marca.value_5.marcas == "y" && marca.value_7.marcas == "y"){
+      alert("player 2 wins")
+      window.location.reload()
+    }else if(marca.value_1.marcas == "y" && marca.value_5.marcas == "y" && marca.value_9.marcas == "y"){
+      alert("player 2 wins")
+      window.location.reload()
+    }
+    
+  }
+
+
+  var turno = (pos,id) =>{
+    
+    var contador = [1,2,3,4,5,6,7,8,9]
+    if(player == 0){
+      contador.forEach(element => {
+        switch (pos) {
+          case element:
+            if(id == `casilla_${element}`){
+              var valor = "value_"+element
+              if(marca[valor].marcas == ""){
+                console.log("entro")
+                setMarca({
+                  ...marca,
+                    [valor]:{
+                      marcas:"x"
+                    }
+                })
+                setPlayer(1)
+              }else{
+                alert("Square occupied")
+              }
+            }else{
+              alert("Square occupied")
+            }
+            break;
+          default:
+            break;
+        }
+      });
+    }else{
+      contador.forEach(element => {
+        switch (pos) {
+          case element:
+            if(id == `casilla_${element}`){
+              var valor = "value_"+element
+              if(marca[valor].marcas == ""){
+                setMarca({
+                  ...marca,
+                    [valor]:{
+                      marcas:"y"
+                    }
+                })
+                setPlayer(0)
+              }else{
+                alert("Square occupied")
+              }
+            }else{
+              alert("Square occupied.")
+            }
+            break;
+          default:
+            break;
+        }
+      });
+    }
+ 
   }
 
   return (
     <div className="App">
       <div>
-        <h2 className="titulo">Juego del gato</h2>
+        <h2 className="titulo">Tic Tac Toe</h2>
+      </div>
+      <div>
+        <h2 className="titulo">Player 1: x / Player 2: y</h2>
       </div>
       <Row>
-        <Col onClick={()=>{turno(1)}} className="casilla-izquierda" span={8}>{marca.casilla_1}</Col>
-        <Col onClick={()=>{turno(2)}} className="casilla-central" span={8}>{marca.casilla_2}</Col>
-        <Col onClick={()=>{turno(3)}} className="casilla-derecha" span={8}>{marca.casilla_3}</Col>
+        <Col onClick={()=>{turno(1,"casilla_1")}} className="casilla-izquierda" span={8}>{marca.value_1.marcas}</Col>
+        <Col onClick={()=>{turno(2,"casilla_2")}} className="casilla-central" span={8}>{marca.value_2.marcas}</Col>
+        <Col onClick={()=>{turno(3,"casilla_3")}} className="casilla-derecha" span={8}>{marca.value_3.marcas}</Col>
       </Row>
       <Row>
-        <Col onClick={()=>{turno(4)}} className="casilla-izquierda" span={8}>{marca.casilla_4}</Col>
-        <Col onClick={()=>{turno(5)}} className="casilla-central" span={8}>{marca.casilla_5}</Col>
-        <Col onClick={()=>{turno(6)}} className="casilla-derecha" span={8}>{marca.casilla_6}</Col>
+        <Col onClick={()=>{turno(4,"casilla_4")}} className="casilla-izquierda" span={8}>{marca.value_4.marcas}</Col>
+        <Col onClick={()=>{turno(5,"casilla_5")}} className="casilla-central" span={8}>{marca.value_5.marcas}</Col>
+        <Col onClick={()=>{turno(6,"casilla_6")}} className="casilla-derecha" span={8}>{marca.value_6.marcas}</Col>
       </Row>
       <Row>
-        <Col onClick={()=>{turno(7)}} className="casilla-izquierda" span={8}>{marca.casilla_7}</Col>
-        <Col onClick={()=>{turno(8)}} className="casilla-central" span={8}>{marca.casilla_8}</Col>
-        <Col onClick={()=>{turno(9)}} className="casilla-derecha" span={8}>{marca.casilla_9}</Col>
+        <Col onClick={()=>{turno(7,"casilla_7")}} className="casilla-izquierda" span={8}>{marca.value_7.marcas}</Col>
+        <Col onClick={()=>{turno(8,"casilla_8")}} className="casilla-central" span={8}>{marca.value_8.marcas}</Col>
+        <Col onClick={()=>{turno(9,"casilla_9")}} className="casilla-derecha" span={8}>{marca.value_9.marcas}</Col>
       </Row>
     </div>
   );

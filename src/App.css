@@ -50,7 +50,8 @@
   border-style: solid;
   border-top: white;
   border-left: white;
-
+  font-size: 50px;
+  font-weight: bold;
 }
 
 .casilla-central{
@@ -62,7 +63,8 @@
   border-top: white;
   border-left: white;
   border-right: white;
-
+  font-size: 50px;
+  font-weight: bold;
 }
 
 .casilla-derecha{
@@ -73,4 +75,6 @@
   border-style: solid;
   border-top: white;
   border-right: white;
+  font-size: 50px;
+  font-weight: bold;
 }
